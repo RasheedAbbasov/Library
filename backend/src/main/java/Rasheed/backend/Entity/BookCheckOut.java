@@ -6,7 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
-
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name = "bookcheckout")
@@ -19,7 +20,7 @@ public class BookCheckOut {
     @Column(name = "firstName", nullable = false, length = 255)
     private String firstName;
 
-    @COlumn(name = "lastName", nullable = false, length = 255)
+    @Column(name = "lastName", nullable = false, length = 255)
     private String lastName;
 
     @Column(name = "address", nullable = false, length = 255)
@@ -27,8 +28,8 @@ public class BookCheckOut {
 
     @Column(name = "date", nullable = false, length = 255)
     private String date;
-    
 
-
-
+    @ManyToOne
+    @JoinColumn(name = "book_id", nullable = false)
+    private Book book;
 }
