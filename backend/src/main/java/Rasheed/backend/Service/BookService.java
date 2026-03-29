@@ -1,0 +1,59 @@
+package Rasheed.backend.Service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import Rasheed.backend.Entity.Book;
+import Rasheed.backend.Repository.BookRepository;
+
+@Service
+public class BookService {
+
+    private BookRepository bookRepository;
+    private Book book;
+
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    public List<Book> getallBooks() {
+        return bookRepository.findAll();
+    }
+
+    public Book getBookById(Integer id) {
+        return bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Book with id " + id + " not found"));
+    }
+
+    public void addBook(Book book) {
+        bookRepository.save(book);
+    }
+
+    public void deleteBook(Integer id) {
+        bookRepository.deleteById(id);
+    }
+
+    public Book updateBook(Integer id, Book updatedBook) {
+        Book book = getBookById(id);
+        book.setName(updatedBook.getName());
+        book.setISBN(updatedBook.getISBN());
+
+        return bookRepository.save(book);
+
+    }
+
+
+    // Future Use
+    // public List<Book> findByAuthor(String author) {
+    //     return bookRepository.findByAuthor(author);
+    // }
+
+    public List<Book> getBooksByName(String name) {
+        return bookRepository.getBooksByName(name);
+    }
+
+    // //Future Use
+    // public List<Book> getBooksByGenre(String genre) {
+    //     return bookRepository.getBooksByGenre(genre);
+    // 
+
+}

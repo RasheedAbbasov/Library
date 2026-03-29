@@ -21,5 +21,20 @@ public class Book {
     @Column(name = "isbn", nullable = false, unique = true, length = 255)
     private String ISBN;
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getISBN() {
+        return this.ISBN;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public void setISBN(String newISBN) {
+        this.ISBN = newISBN;
+    }
 
 }
