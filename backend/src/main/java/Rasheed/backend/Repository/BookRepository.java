@@ -10,7 +10,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     List<Book> findByTitle(String title);
 
-    List<Book> findByAvailable(boolean availability);
+    List<Book> findByAvailable(boolean availabe);
 
     List<Book> findByGenre(String genre);
 }

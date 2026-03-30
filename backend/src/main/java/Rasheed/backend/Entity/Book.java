@@ -33,6 +33,20 @@ public class Book {
 
 //-------------------------------------------------------------------------------
 
+    public Book() {
+
+    }
+
+    public Book(String title, String ISBN, String author, String genre, boolean available) {
+        this.title = title;
+        this.ISBN = ISBN;
+        this.author = author;
+        this.genre = genre;
+        this.available = available;
+    }
+
+
+
     public String getTitle() {
         return this.title;
     }
@@ -65,7 +79,7 @@ public class Book {
         this.available = available;
     }
 
-    public void setName(String newTitle) {
+    public void setTitle(String newTitle) {
         this.title = newTitle;
     }
 

@@ -36,15 +36,15 @@ public class BookService {
         Book book = getBookById(id);
         book.setTitle(updatedBook.getTitle());
         book.setISBN(updatedBook.getISBN());
-        book.setAvailable(updatedBook.getAvailable());
+        book.setAvailable(updatedBook.isAvailable());
         book.setAuthor(updatedBook.getAuthor());
-        book.setGenre(updatedBook.setGenre());
+        book.setGenre(updatedBook.getGenre());
 
         return bookRepository.save(book);
     }
 
-    public List<Book> findAvailability(boolean availability) {
-        return bookRepository.findByAvailability(availability);
+    public List<Book> findByAvailability(boolean availability) {
+        return bookRepository.findByAvailable(availability);
     }
 
     public List<Book> findByAuthor(String author) {
@@ -56,7 +56,7 @@ public class BookService {
     }
 
     public List<Book> findByGenre(String genre) {
-        return bookRepository.getBooksByGenre(genre);
+        return bookRepository.findByGenre(genre);
     }
     
 
