@@ -34,7 +34,7 @@ public class BookService {
 
     public Book updateBook(Integer id, Book updatedBook) {
         Book book = getBookById(id);
-        book.setName(updatedBook.getName());
+        book.setTitle(updatedBook.getTitle());
         book.setISBN(updatedBook.getISBN());
 
         return bookRepository.save(book);
@@ -47,8 +47,8 @@ public class BookService {
     //     return bookRepository.findByAuthor(author);
     // }
 
-    public List<Book> getBooksByName(String name) {
-        return bookRepository.getBooksByName(name);
+    public List<Book> getBooksByTitle(String title) {
+        return bookRepository.getBooksByTitle(title);
     }
 
     // //Future Use

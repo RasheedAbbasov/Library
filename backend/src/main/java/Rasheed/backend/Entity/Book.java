@@ -15,22 +15,26 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "name", nullable = false, length = 255)
-    private String name;
+    @Column(name = "title", nullable = false, length = 255)
+    private String title;
 
     @Column(name = "isbn", nullable = false, unique = true, length = 255)
     private String ISBN;
 
-    public String getName() {
-        return this.name;
+    private String author;
+
+    // private String 
+
+    public String getTitle() {
+        return this.title;
     }
 
     public String getISBN() {
         return this.ISBN;
     }
 
-    public void setName(String newName) {
-        this.name = newName;
+    public void setName(String newTitle) {
+        this.title = newTitle;
     }
 
     public void setISBN(String newISBN) {

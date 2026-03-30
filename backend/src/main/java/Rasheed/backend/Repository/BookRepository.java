@@ -8,7 +8,7 @@ import Rasheed.backend.Entity.Book;
 public interface BookRepository extends JpaRepository<Book, Integer> {
     // List<Book> findByAuthor(String author); Future Use
 
-    List<Book> getBooksByName(String name);
+    List<Book> getBooksByTitle(String title);
 
     // List<Book> getBooksByGenre(String genre);  Future Use
 }
