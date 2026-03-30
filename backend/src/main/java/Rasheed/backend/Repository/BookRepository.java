@@ -6,9 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import Rasheed.backend.Entity.Book;
 
 public interface BookRepository extends JpaRepository<Book, Integer> {
-    // List<Book> findByAuthor(String author); Future Use
+    List<Book> findByAuthor(String author);
 
-    List<Book> getBooksByTitle(String title);
+    List<Book> findByTitle(String title);
 
-    // List<Book> getBooksByGenre(String genre);  Future Use
+    List<Book> findByAvailable(boolean availability);
+
+    List<Book> findByGenre(String genre);
 }

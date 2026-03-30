@@ -21,9 +21,17 @@ public class Book {
     @Column(name = "isbn", nullable = false, unique = true, length = 255)
     private String ISBN;
 
+    @Column(name = "author", nullable = false, unique = false, length = 255)
     private String author;
 
-    // private String 
+    @Column(name = "available", nullable = false, unique = false)
+    private boolean available;
+
+    @Column(name = "genre", nullable = false, unique = false, length = 255)
+    public String genre; 
+
+
+//-------------------------------------------------------------------------------
 
     public String getTitle() {
         return this.title;
@@ -31,6 +39,30 @@ public class Book {
 
     public String getISBN() {
         return this.ISBN;
+    }
+
+    public boolean isAvailable() {
+        return this.available;
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public String getGenre() {
+        return this.genre;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     public void setName(String newTitle) {

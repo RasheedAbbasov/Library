@@ -36,24 +36,28 @@ public class BookService {
         Book book = getBookById(id);
         book.setTitle(updatedBook.getTitle());
         book.setISBN(updatedBook.getISBN());
+        book.setAvailable(updatedBook.getAvailable());
+        book.setAuthor(updatedBook.getAuthor());
+        book.setGenre(updatedBook.setGenre());
 
         return bookRepository.save(book);
-
     }
 
-
-    // Future Use
-    // public List<Book> findByAuthor(String author) {
-    //     return bookRepository.findByAuthor(author);
-    // }
-
-    public List<Book> getBooksByTitle(String title) {
-        return bookRepository.getBooksByTitle(title);
+    public List<Book> findAvailability(boolean availability) {
+        return bookRepository.findByAvailability(availability);
     }
 
-    // //Future Use
-    // public List<Book> getBooksByGenre(String genre) {
-    //     return bookRepository.getBooksByGenre(genre);
-    // 
+    public List<Book> findByAuthor(String author) {
+        return bookRepository.findByAuthor(author);
+    }
+
+    public List<Book> findByTitle(String title) {
+        return bookRepository.findByTitle(title);
+    }
+
+    public List<Book> findByGenre(String genre) {
+        return bookRepository.getBooksByGenre(genre);
+    }
+    
 
 }
