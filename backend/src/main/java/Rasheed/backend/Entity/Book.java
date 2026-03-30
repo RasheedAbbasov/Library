@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 @Entity
 @Table(name = "book")
@@ -18,6 +20,7 @@ public class Book {
     @Column(name = "title", nullable = false, length = 255)
     private String title;
 
+    @JsonProperty("isbn")
     @Column(name = "isbn", nullable = false, unique = true, length = 255)
     private String ISBN;
 

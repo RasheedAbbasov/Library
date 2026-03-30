@@ -16,11 +16,11 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public List<Book> getallBooks() {
+    public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
 
-    public Book getBookById(Integer id) {
+    public Book findById(Integer id) {
         return bookRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Book with id " + id + " not found"));
     }
 
@@ -33,7 +33,7 @@ public class BookService {
     }
 
     public Book updateBook(Integer id, Book updatedBook) {
-        Book book = getBookById(id);
+        Book book = findById(id);
         book.setTitle(updatedBook.getTitle());
         book.setISBN(updatedBook.getISBN());
         book.setAvailable(updatedBook.isAvailable());

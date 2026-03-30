@@ -1,0 +1,11 @@
+POST https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books
+Content-Type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "isbn": "978-0743273565",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Fiction",
+    "available": true
+}
+
