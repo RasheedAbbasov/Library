@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 import Rasheed.backend.Service.BookService;
@@ -31,17 +32,22 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @GetMapping("/{id}")
-    public Book findById(@PathVariable Integer id) {
-        return bookService.findById(id);
-
-    }
-
-
     @PostMapping
     public void addBook(@RequestBody Book book) {
         bookService.addBook(book);
     }
+
+    @DeleteMapping("/{Id}")
+    public void deleteBookById(@PathVariable Integer Id) {
+        bookService.deleteBookById(Id);
+    }
+
+    @GetMapping("/{Id}")
+    public Book findById(@PathVariable Integer Id) {
+        return bookService.findById(Id);
+
+    }
+
 
 
 }

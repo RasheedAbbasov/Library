@@ -9,3 +9,12 @@ Content-Type: application/json
     "available": true
 }
 
+###
+
+DELETE https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books/1
+
+###
+
+GET https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books
+
+###

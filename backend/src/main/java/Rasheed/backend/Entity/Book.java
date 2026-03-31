@@ -15,7 +15,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
 
     @Column(name = "title", nullable = false, length = 255)
     private String title;
@@ -27,7 +27,7 @@ public class Book {
     @Column(name = "author", nullable = false, unique = false, length = 255)
     private String author;
 
-    @Column(name = "available", nullable = false, unique = false)
+    @Column(name = "available", nullable = true, columnDefinition = "BOOLEAN DEFAULT  false")
     private boolean available;
 
     @Column(name = "genre", nullable = false, unique = false, length = 255)
@@ -49,6 +49,9 @@ public class Book {
     }
 
 
+    public long getId() {
+        return this.id;
+    }
 
     public String getTitle() {
         return this.title;
