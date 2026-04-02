@@ -49,7 +49,7 @@ public class Book {
     }
 
 
-    public long getId() {
+    public Integer getId() {
         return this.id;
     }
 

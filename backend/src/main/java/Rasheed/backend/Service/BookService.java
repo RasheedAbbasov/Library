@@ -10,7 +10,6 @@ import Rasheed.backend.Repository.BookRepository;
 public class BookService {
 
     private BookRepository bookRepository;
-    private Book book;
 
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
