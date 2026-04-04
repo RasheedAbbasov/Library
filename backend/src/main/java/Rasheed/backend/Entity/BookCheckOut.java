@@ -15,7 +15,7 @@ public class BookCheckOut {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "firstName", nullable = false, length = 255)
     private String firstName;
@@ -32,4 +32,63 @@ public class BookCheckOut {
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
+
+    //----------------------------------------------------------
+
+    public BookCheckOut() {
+
+    }
+
+    public BookCheckOut(String firstName, String lastName, String address, String date, Book book) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.date = date;
+        this.book = book;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public Book getBook() {
+        return this.book;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public String getDate() {
+        return this.date;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
 }

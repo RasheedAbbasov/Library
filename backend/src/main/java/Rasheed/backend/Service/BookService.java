@@ -1,18 +1,20 @@
 package Rasheed.backend.Service;
 
 import java.util.List;
-
 import org.springframework.stereotype.Service;
 import Rasheed.backend.Entity.Book;
 import Rasheed.backend.Repository.BookRepository;
+import Rasheed.backend.Service.BookCheckOutService;
 
 @Service
 public class BookService {
 
     private BookRepository bookRepository;
+    private BookCheckOutService bookCheckOutService;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, BookCheckOutService bookCheckOutService) {
         this.bookRepository = bookRepository;
+        this.bookCheckOutService = bookCheckOutService;
     }
 
     public List<Book> getAllBooks() {
@@ -28,6 +30,9 @@ public class BookService {
     }
 
     public void deleteBookById(Integer id) {
+        if(bookCheckOutService.isBookCheckedOut(id)) {
+            throw new IllegalStateException("Cannot delete book because it is currently checked out");
+        }
         bookRepository.deleteById(id);
     }
 

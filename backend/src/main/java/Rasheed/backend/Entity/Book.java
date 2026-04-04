@@ -73,6 +73,10 @@ public class Book {
         return this.genre;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public void setAuthor(String author) {
         this.author = author;
     }
