@@ -17,7 +17,6 @@ public class BookCheckOutService {
         this.bookCheckOutRepository = bookCheckOutRepository;
     }
 
-
     public List<BookCheckOut> getAllBookCheckOuts() {
         return bookCheckOutRepository.findAll();
     }
