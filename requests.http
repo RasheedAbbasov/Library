@@ -18,3 +18,36 @@ DELETE https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books/2
 GET https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books
 
 ###
+
+POST https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/checkout
+Content-Type: application/json
+
+{
+    "firstName": "Rasheed",
+    "lastName": "Abbasov",
+    "address": "25 S Monmouth St, Dayton OH 45403",
+    "date": "2026-06-15",
+    "book": {
+        "id": 3
+    }
+}
+
+###
+
+GET https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/checkout/1
+//Finds bookCheckout entity with id {id}
+
+###
+
+GET https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/checkout
+//Finds all bookCheckout entities
+
+###
+
+GET https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/checkout/book/3
+//Finds bookCheckout entity with bookid {bookId} attached to bookCheckout entity 
+
+###
+
+DELETE https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/checkout/1
+//Deletes bookCheckout entity with id {id}

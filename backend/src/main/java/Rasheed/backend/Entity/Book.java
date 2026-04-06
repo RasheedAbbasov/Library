@@ -27,8 +27,8 @@ public class Book {
     @Column(name = "author", nullable = false, unique = false, length = 255)
     private String author;
 
-    @Column(name = "available", nullable = true, columnDefinition = "BOOLEAN DEFAULT  false")
-    private boolean available;
+    @Column(name = "available", nullable = false, columnDefinition = "BOOLEAN DEFAULT  true")
+    private Boolean available = true;
 
     @Column(name = "genre", nullable = false, unique = false, length = 255)
     public String genre; 
@@ -40,7 +40,7 @@ public class Book {
 
     }
 
-    public Book(String title, String ISBN, String author, String genre, boolean available) {
+    public Book(String title, String ISBN, String author, String genre, Boolean available) {
         this.title = title;
         this.ISBN = ISBN;
         this.author = author;
@@ -61,7 +61,7 @@ public class Book {
         return this.ISBN;
     }
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return this.available;
     }
 
@@ -85,7 +85,7 @@ public class Book {
         this.genre = genre;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 

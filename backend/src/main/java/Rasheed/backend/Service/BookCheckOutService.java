@@ -48,7 +48,7 @@ public class BookCheckOutService {
         return bookCheckOutRepository.findByBookId(bookId);
     }
 
-    public boolean isBookCheckedOut(Integer bookId) {
+    public Boolean isBookCheckedOut(Integer bookId) {
         return bookCheckOutRepository.existsByBookId(bookId);
     }
 
