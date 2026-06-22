@@ -1,21 +1,21 @@
-POST https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books
+POST http://localhost:8080/api/books
 Content-Type: application/json
 
 {
-    "title": "The Great Gatsby",
-    "isbn": "978-0743273565",
-    "author": "F. Scott Fitzgerald",
-    "genre": "Fiction",
+    "title": "It",
+    "isbn": "978-0012390123",
+    "author": "Stephen King",
+    "genre": "Horror",
     "available": true
 }
 
 ###
 
-DELETE https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books/2
+DELETE http://localhost:8080/api/books/2
 
 ###
 
-GET https://symmetrical-meme-p6xv54gjgrx2w7x-8080.app.github.dev/books
+GET http://localhost:8080/api/books
 
 ###
 
